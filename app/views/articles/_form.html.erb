@@ -1,0 +1,8 @@
+<%= form_with(model: article, local: true) do |form| %>
+  <%= form.label :Title %>
+  <%= form.text_field :title %>
+  <%= form.label :Body %>
+  <%= form.text_field :body %>
+  <%= form.submit :Ok %>
+  <%= link_to "Back", articles_path %>
+<% end %>
