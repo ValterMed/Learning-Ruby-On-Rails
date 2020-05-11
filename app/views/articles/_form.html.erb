@@ -1,8 +1,27 @@
-<%= form_with(model: article, local: true) do |form| %>
-  <%= form.label :Title %>
-  <%= form.text_field :title %>
-  <%= form.label :Body %>
-  <%= form.text_field :body %>
-  <%= form.submit :Ok %>
-  <%= link_to "Back", articles_path %>
-<% end %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="jumbotron Turquoise">
+        <form>
+          <fieldset>
+            <h1 class="text-center"><%= title %></h1>
+            <%= form_with(model: article, local: true) do |form| %>
+              <div class="form-group">
+                <h2><%= form.label :Title %></h2>
+                <%= form.text_field :title, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <h2><%= form.label :Body %></h2>
+                <%= form.text_area :body, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= form.submit :Ok, class: "btn btn-primary" %>
+                <%= link_to "Back", articles_path, class: "btn btn-secondary" %>
+              </div>
+            <% end %>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -13,4 +13,40 @@
  *= require_tree .
  *= require_self
  */
- @import 'bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/bootstrap';
+
+//colors list
+$black: #000;
+$white: #fff;
+$LightGoldenrodYellow-color: #FAFAD2;
+$LightSalmon-color: #FFA07A;
+$DeepPink-color: #FF1493;
+$MediumVioletRed-color: #C71585;
+$Turquoise-color: #40E0D0;
+
+$color-classes : (
+  title: $black,
+  background: $white,
+  LightGoldenrodYellow: $LightGoldenrodYellow-color,
+  LightSalmon: $LightSalmon-color,
+  DeepPink: $DeepPink-color,
+  MediumVioletRed: $MediumVioletRed-color,
+  Turquoise: $Turquoise-color
+);
+
+body { 
+  background-color: $white;
+}
+
+@each $class_name, $color in $color-classes {
+  .#{$class_name}{
+    background-color: $color;
+  }
+  .#{$class-name}-text {
+    color: $color;
+  }
+}
+
+.list-group {
+  margin-bottom: 10px;
+}
